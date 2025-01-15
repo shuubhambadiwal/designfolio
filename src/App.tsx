@@ -4,7 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Navigation } from "@/components/Navigation";
-import { Gallery } from "@/components/Gallery";
+import { Gallery } from "@/components/Gallary";
 
 const queryClient = new QueryClient();
 

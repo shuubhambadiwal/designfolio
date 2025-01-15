@@ -15,14 +15,21 @@ export const Navigation = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      <nav className="glass mx-4 my-4 px-6 py-4 rounded-lg">
-        <ul className="flex items-center justify-center gap-8">
+      <nav className="glass mx-2 my-4 px-6 py-4 rounded-lg flex items-center justify-between">
+      <div className="flex items-center">
+          <img
+            src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Sun.png"
+            alt="Logo"
+            className="rounded-full w-11 h-11"
+          />
+        </div>
+        <ul className="flex items-center justify-center gap-10">
           {navItems.map((item) => (
             <li key={item.path}>
               <Link
                 to={item.path}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary",
+                  "text-lg font-medium transition-colors hover:text-primary",
                   location.pathname === item.path
                     ? "text-primary"
                     : "text-muted-foreground"
@@ -33,6 +40,9 @@ export const Navigation = () => {
             </li>
           ))}
         </ul>
+        <div className="flex items-center">
+          <span className="text-2xl font-signature">Shubham Badiwal</span>
+        </div>
       </nav>
     </header>
   );
