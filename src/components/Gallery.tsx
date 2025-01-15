@@ -71,14 +71,16 @@ export const Gallery = ({ items, category }: GalleryProps) => {
       </div>
 
       <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-        <DialogOverlay className="backdrop-blur-sm" />
-        <DialogContent className="max-w-[90vw] max-h-[90vh] p-0 border-none bg-transparent">
+        <DialogOverlay className="bg-black/30 backdrop-blur-[2px]" />
+        <DialogContent className="max-w-[95vw] max-h-[95vh] p-4 border-none bg-transparent">
           {selectedImage && (
-            <img
-              src={selectedImage.src}
-              alt={selectedImage.alt}
-              className="w-full h-full object-contain rounded-lg"
-            />
+            <div className="w-full h-full flex items-center justify-center">
+              <img
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+              />
+            </div>
           )}
         </DialogContent>
       </Dialog>
