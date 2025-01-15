@@ -64,10 +64,12 @@
   }
 
   body {
-    @apply bg-[#1A1F2C] text-foreground antialiased;
+    @apply bg-white text-foreground antialiased;
   }
 
   .glass {
-    @apply bg-glass backdrop-blur-md border border-white/10;
+    @apply bg-black/15 backdrop-blur-md border border-white/30;
   }
+
+  
 }

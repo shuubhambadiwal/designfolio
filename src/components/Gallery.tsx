@@ -25,7 +25,7 @@ export const Gallery = ({ items, category }: GalleryProps) => {
       clearTimeout(pauseTimeout);
       pauseTimeout = window.setTimeout(() => {
         setIsPaused(false);
-      }, 3000);
+      }, 1000);
     }
   };
 
