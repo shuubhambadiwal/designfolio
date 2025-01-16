@@ -5,7 +5,7 @@ import {
   DialogContent,
   DialogOverlay,
 } from "@/components/ui/dialog";
-import {Navigation} from "@/components/Navigation";
+import { Navigation } from "@/components/Navigation";
 
 interface GalleryProps {
   items: { id: string; src: string; alt: string; category?: string }[];
@@ -42,10 +42,13 @@ export const Gallery = ({ items, category }: GalleryProps) => {
 
   return (
     <>
-  <div className="fixed top-0 left-0 w-full z-10 bg-white shadow-md">
+      {/* Updated Navigation Bar */}
+      <div className="sticky top-0 left-0 w-full z-10 bg-white shadow-md">
         <Navigation />
       </div>
-      <div className="pt-24" onMouseMove={handleMouseMove}>
+
+      {/* Gallery Content */}
+      <div className="pt-12" onMouseMove={handleMouseMove}>
         <div className="auto-scroll-container px-4">
           <div
             className={cn(
@@ -56,7 +59,7 @@ export const Gallery = ({ items, category }: GalleryProps) => {
             {filteredItems.map((item, index) => (
               <div
                 key={`${item.id}-${index}`}
-                className="glass rounded-lg overflow-hidden aspect-square transition-transform hover:scale-105 cursor-pointer"
+                className="rounded-lg overflow-hidden aspect-square transition-transform hover:scale-105 cursor-pointer"
                 onClick={() => {
                   setSelectedImage({ src: item.src, alt: item.alt });
                   setIsPaused(true);
@@ -70,16 +73,19 @@ export const Gallery = ({ items, category }: GalleryProps) => {
               </div>
             ))}
           </div>
-          <div className="fade-overlay"></div>
         </div>
       </div>
 
-      <Dialog open={!!selectedImage} onOpenChange={(open) => {
-        if (!open) {
-          setSelectedImage(null);
-          setIsPaused(false);
-        }
-      }}>
+      {/* Image Modal */}
+      <Dialog
+        open={!!selectedImage}
+        onOpenChange={(open) => {
+          if (!open) {
+            setSelectedImage(null);
+            setIsPaused(false);
+          }
+        }}
+      >
         <DialogOverlay className="bg-black/30 backdrop-blur-[2px]" />
         <DialogContent className="max-w-[95vw] max-h-[95vh] p-4 border-none bg-transparent">
           {selectedImage && (
