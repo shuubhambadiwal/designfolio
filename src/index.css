@@ -11,7 +11,7 @@
 }
 
 .auto-scroll-container {
-  position: relative;
+  position: fixed;
   overflow: scroll;
   padding-top: 4rem; /* Adjust this value based on the height of your header */
 }

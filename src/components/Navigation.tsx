@@ -41,7 +41,7 @@ export const Navigation = () => {
           ))}
         </ul>
         <div className="flex items-center">
-          <span className="text-2xl font-signature">Shubham Badiwal</span>
+          <span className="text-3xl font-signature">Shubham Badiwal</span>
         </div>
       </nav>
     </header>
