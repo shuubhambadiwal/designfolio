@@ -25,11 +25,6 @@
   animation-play-state: paused;
 }
 
-.navigation-item {
-  font-size: 1.25rem; /* Increase this value as needed */
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-}
 
 @keyframes scroll {
   0% {

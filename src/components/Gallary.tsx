@@ -45,8 +45,8 @@ export const Gallery = ({ items, category }: GalleryProps) => {
       <div className="fixed top-0 left-0 w-full z-10 bg-white shadow-md">
         <Navigation />
       </div>
-      <div className="pt-24 px-4" onMouseMove={handleMouseMove}>
-        <div className="auto-scroll-container">
+      <div className="pt-24" onMouseMove={handleMouseMove}>
+        <div className="auto-scroll-container px-4">
           <div
             className={cn(
               "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-scroll",
