@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 .glass {
-  @apply bg-white/10 dark:bg-black/10 backdrop-blur-md border border-white/20 dark:border-white/10;
+  @apply bg-black/5 dark:bg-white/5 backdrop-blur-md;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(40px);
   padding: 15px;
