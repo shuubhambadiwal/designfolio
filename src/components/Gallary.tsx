@@ -48,7 +48,7 @@ export const Gallery = ({ items, category }: GalleryProps) => {
       </div>
 
       {/* Gallery Content */}
-      <div className="pt-12" onMouseMove={handleMouseMove}>
+      <div className="pt-9" onMouseMove={handleMouseMove}>
         <div className="auto-scroll-container px-4">
           <div
             className={cn(

@@ -290,43 +290,43 @@ const items = [
     id: "45",
     src: "https://images.unsplash.com/photo-1496307653780-42ee777d4833",
     alt: "Catalogue 9",
-    category: "catalogue",
+    category: "intro",
   },
   {
     id: "46",
     src: "https://images.unsplash.com/photo-1431576901776-e539bd916ba2",
     alt: "Thumbnail 9",
-    category: "thumbnail",
+    category: "intro",
   },
   {
     id: "47",
     src: "https://images.unsplash.com/photo-1449157291145-7efd050a4d0e",
     alt: "Channel Art 8",
-    category: "channel-art",
+    category: "intro",
   },
   {
     id: "48",
     src: "https://images.unsplash.com/photo-1459767129954-1b1c1f9b9ace",
     alt: "Logo 13",
-    category: "logo",
+    category: "intro",
   },
   {
     id: "49",
     src: "https://images.unsplash.com/photo-1460574283810-2aab119d8511",
     alt: "Poster 10",
-    category: "poster",
+    category: "intro",
   },
   {
     id: "50",
     src: "https://images.unsplash.com/photo-1486718448742-163732cd1544",
     alt: "Catalogue 10",
-    category: "catalogue",
+    category: "intro",
   },
   {
     id: "51",
     src: "https://images.unsplash.com/photo-1439337153520-7082a56a81f4",
     alt: "Thumbnail 10",
-    category: "thumbnail",
+    category: "intro",
   },
 ];
 
@@ -357,6 +357,10 @@ const App = () => (
             <Route
               path="/channel-art"
               element={<Gallery items={items} category="channel-art" />}
+            />
+             <Route
+              path="/intro"
+              element={<Gallery items={items} category="intro" />}
             />
           </Routes>
         </div>

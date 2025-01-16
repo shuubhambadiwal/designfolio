@@ -8,6 +8,7 @@ const navItems = [
   { label: "Poster", path: "/poster" },
   { label: "Thumbnail", path: "/thumbnail" },
   { label: "Channel Art", path: "/channel-art" },
+  { label: "Intro", path: "/intro" },
 ];
 
 export const Navigation = () => {
@@ -15,7 +16,7 @@ export const Navigation = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      <nav className="glass mx-2 my-4 px-6 py-4 rounded-lg flex items-center justify-between">
+      <nav className="glass top-0 flex items-center justify-between">
 
       <div className="flex items-center">
           <img
@@ -23,7 +24,7 @@ export const Navigation = () => {
             alt="Logo"
             className="rounded-full w-11 h-11"
           />
-        </div>
+      </div>
         <ul className="flex items-center justify-center gap-10">
           {navItems.map((item) => (
             <li key={item.path}>
@@ -41,7 +42,7 @@ export const Navigation = () => {
             </li>
           ))}
         </ul>
-        <div className="flex items-center">
+        <div className="flex items-center mr-3">
           <span className="text-3xl font-signature">Shubham Badiwal</span>
         </div>
       </nav>
