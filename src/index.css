@@ -11,8 +11,8 @@
 }
 
 .auto-scroll-container {
-  position: fixed;
-  overflow: scroll;
+  /* position: relative; */
+  /* overflow: scroll; */
   padding-top: 4rem; /* Adjust this value based on the height of your header */
 }
 
@@ -36,7 +36,7 @@
 }
 
 .fade-overlay {
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   left: 0;
   right: 0;

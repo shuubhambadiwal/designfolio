@@ -42,7 +42,7 @@ export const Gallery = ({ items, category }: GalleryProps) => {
 
   return (
     <>
-      <div className="fixed top-0 left-0 w-full z-10 bg-white shadow-md">
+  <div className="fixed top-0 left-0 w-full z-10 bg-white shadow-md">
         <Navigation />
       </div>
       <div className="pt-24" onMouseMove={handleMouseMove}>
@@ -53,7 +53,7 @@ export const Gallery = ({ items, category }: GalleryProps) => {
               isPaused && "auto-scroll-paused"
             )}
           >
-            {[...filteredItems, ...filteredItems].map((item, index) => (
+            {filteredItems.map((item, index) => (
               <div
                 key={`${item.id}-${index}`}
                 className="glass rounded-lg overflow-hidden aspect-square transition-transform hover:scale-105 cursor-pointer"

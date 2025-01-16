@@ -106,6 +106,7 @@ const items = [
     category: "channel-art",
   },
   // Additional items for each category...
+  // Logo
   {
     id: 16,
     src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
