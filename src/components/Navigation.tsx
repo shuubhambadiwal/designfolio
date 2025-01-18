@@ -7,10 +7,10 @@ import { Curtains } from "./Curtains";
 const navItems = [
   { label: "Home", path: "/" },
   { label: "Logo", path: "/logo" },
-  { label: "Catalogue", path: "/catalogue" },
+  { label: "Info Graphics", path: "/thumbnail" },
+  // { label: "Catalogue", path: "/catalogue" },
   { label: "Poster", path: "/poster" },
-  { label: "Thumbnail", path: "/thumbnail" },
-  { label: "Channel Art", path: "/channel-art" },
+  // { label: "Channel Art", path: "/channel-art" },
   { label: "Intro", path: "/intro" },
 ];
 
