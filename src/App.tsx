@@ -6,14 +6,15 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Navigation } from "@/components/Navigation";
 import { Gallery } from "@/components/Gallary";
 
+
 const queryClient = new QueryClient();
 
 
 const items = [
   {
     id: "1",
-    src: "./src/assets/images/1.svg",
-    // src: "/public/logos/1.svg",
+    // src: "./src/assets/images/1.svg",
+    src: "/public/logos/1.svg",
     alt: "Tech Logo 1",
     category: "logo",
   },
