@@ -12,7 +12,7 @@ const queryClient = new QueryClient();
 const items = [
   {
     id: "1",
-    src: "/public/logos/1.svg",
+    src: "/logos/1.svg",
     alt: "Tech Logo 1",
     category: "logo",
   },
