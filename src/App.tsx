@@ -11,7 +11,7 @@ const queryClient = new QueryClient();
 const items = [
   {
     id: "1",
-    src: "/logos/1.svg",
+    src: `${import.meta.env.BASE_URL + "/logos/1.svg"}`,
     alt: "Picture1",
     category: "logo",
   },
@@ -550,7 +550,7 @@ const items = [
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <div className="min-h-screen">
           <Navigation />
           <Routes>
