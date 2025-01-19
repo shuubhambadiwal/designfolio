@@ -7,7 +7,6 @@ import { Navigation } from "@/components/Navigation";
 import { Gallery } from "@/components/Gallary";
 import dj from "../public/logos/dj.svg";
 
-
 const queryClient = new QueryClient();
 
 const items = [
@@ -19,7 +18,7 @@ const items = [
   },
   {
     id: "2",
-    src : dj,
+    src: `${import.meta.env.BASE_URL + "/logos/2.svg"}`,
     alt: "Picture2",
     category: "logo",
   },
@@ -552,7 +551,7 @@ const items = [
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <BrowserRouter >
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <div className="min-h-screen">
           <Navigation />
           <Routes>
