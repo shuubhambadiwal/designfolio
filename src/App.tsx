@@ -550,7 +550,7 @@ const items = [
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <BrowserRouter >
         <div className="min-h-screen">
           <Navigation />
           <Routes>
