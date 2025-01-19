@@ -5,20 +5,19 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Navigation } from "@/components/Navigation";
 import { Gallery } from "@/components/Gallary";
-import dj from "../public/logos/dj.svg";
 
 const queryClient = new QueryClient();
 
 const items = [
   {
     id: "1",
-    src: `${import.meta.env.BASE_URL + "/logos/1.svg"}`,
+    src: "/logos/1.svg",
     alt: "Picture1",
     category: "logo",
   },
   {
     id: "2",
-    src: `${import.meta.env.BASE_URL + "/logos/2.svg"}`,
+    src: "/logos/.svg",
     alt: "Picture2",
     category: "logo",
   },
@@ -36,7 +35,7 @@ const items = [
   },
   {
     id: "5",
-    src: "",
+    src: "/logos/2.svg",
     alt: "Picture5",
     category: "logo",
   },
@@ -551,7 +550,7 @@ const items = [
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <BrowserRouter>
         <div className="min-h-screen">
           <Navigation />
           <Routes>
