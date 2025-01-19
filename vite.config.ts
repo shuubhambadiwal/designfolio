@@ -3,10 +3,10 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-// https://vitejs.dev/config/
+
 export default defineConfig(({ mode }) => ({
   assetsInclude: ["**/*.glb"],
-   base: "/designfolio/",
+   base: "/vite-react-gallry/",
   server: {
     host: "::",
     port: 8080,
