@@ -8,9 +8,9 @@ const navItems = [
   { label: "Home", path: "/" },
   { label: "Logo", path: "/logo" },
   { label: "Info Graphics", path: "/thumbnail" },
+  { label: "Channel Art", path: "/channel-art" },
   // { label: "Catalogue", path: "/catalogue" },
-  { label: "Poster", path: "/poster" },
-  // { label: "Channel Art", path: "/channel-art" },
+  { label: "Brochure", path: "/poster" },
   { label: "Intro", path: "/intro" },
 ];
 
