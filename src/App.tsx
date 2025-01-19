@@ -5,6 +5,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Navigation } from "@/components/Navigation";
 import { Gallery } from "@/components/Gallary";
+import dj from "../public/logos/dj.svg";
+
 
 const queryClient = new QueryClient();
 
@@ -17,7 +19,7 @@ const items = [
   },
   {
     id: "2",
-    src: "/logos/2.svg",
+    src : dj,
     alt: "Picture2",
     category: "logo",
   },
@@ -546,7 +548,7 @@ const items = [
 ];
 
 
-
+ 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
