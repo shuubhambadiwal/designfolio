@@ -6,7 +6,7 @@ import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
   assetsInclude: ["**/*.glb"],
-   base: "/vite-react-gallry/",
+   base: "/designfolio/",
   server: {
     host: "::",
     port: 8080,

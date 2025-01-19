@@ -14,7 +14,7 @@ const items = [
   {
     id: "1",
     // src: "./src/assets/images/1.svg",
-    src: `${import.meta.env.BASE_URL + "/logos/1.svg"}`,
+    src: "/logos/1.svg",
     alt: "Tech Logo 1",
     category: "logo",
   },
@@ -552,7 +552,7 @@ const items = [
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <BrowserRouter>
         <div className="min-h-screen">
           <Navigation />
           <Routes>
