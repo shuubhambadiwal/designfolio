@@ -31,30 +31,40 @@ export const Gallery = ({ items, category }: GalleryProps) => {
   };
 
   const getImagePath = (src: string) => {
-    // Log the image path for debugging
-    console.log("Original image path:", src);
-    
-    // If the path already starts with http/https, return as is
-    if (src.startsWith('http')) {
+    try {
+      // If it's a URL, return as is
+      if (src.startsWith('http')) {
+        return src;
+      }
+
+      // For Vite, we need to use the special import.meta.env.BASE_URL
+      const baseUrl = import.meta.env.BASE_URL || '';
+      
+      // Clean up the path
+      const cleanPath = src.startsWith('/') ? src.slice(1) : src;
+      
+      // Construct the final path
+      const finalPath = `${baseUrl}${cleanPath}`;
+      
+      console.log('Image path:', finalPath);
+      return finalPath;
+    } catch (error) {
+      console.error('Error in getImagePath:', error);
       return src;
     }
-    
-    // Ensure path starts with forward slash
-    const normalizedPath = src.startsWith('/') ? src : `/${src}`;
-    console.log("Normalized image path:", normalizedPath);
-    
-    // For Vercel deployment, we need to ensure the path is absolute
-    const basePath = import.meta.env.BASE_URL || '';
-    const finalPath = `${basePath}${normalizedPath}`;
-    console.log("Final image path:", finalPath);
-    
-    return finalPath;
   };
 
   useEffect(() => {
     // Log all image paths on component mount for debugging
     items.forEach(item => {
-      console.log(`Processing image: ${item.id}`, getImagePath(item.src));
+      const path = getImagePath(item.src);
+      console.log(`Processing image ${item.id}:`, path);
+      
+      // Preload images
+      const img = new Image();
+      img.src = path;
+      img.onload = () => console.log(`Image ${item.id} loaded successfully`);
+      img.onerror = (e) => console.error(`Error loading image ${item.id}:`, e);
     });
 
     return () => {
@@ -100,8 +110,8 @@ export const Gallery = ({ items, category }: GalleryProps) => {
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     console.error("Image failed to load:", e.currentTarget.src);
-                    // Optionally set a fallback image
-                    // e.currentTarget.src = '/fallback-image.png';
+                    const imgElement = e.currentTarget;
+                    console.log("Failed image element:", imgElement);
                   }}
                 />
               </div>
