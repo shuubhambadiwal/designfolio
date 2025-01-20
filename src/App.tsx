@@ -8,6 +8,7 @@ import { Gallery } from "@/components/Gallary";
 
 const queryClient = new QueryClient();
 
+
 const items = [
   {
     id: "1",
