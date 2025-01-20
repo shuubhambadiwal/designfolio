@@ -11,13 +11,13 @@ const queryClient = new QueryClient();
 const items = [
   {
     id: "1",
-    src: "/logos/2.svg",
+    src: "Logos/2.svg",
     alt: "Picture1",
     category: "logo",
   },
   {
     id: "2",
-    src: "/logos/dj.svg",
+    src: "Logos/DJ.svg",
     alt: "Picture2",
     category: "logo",
   },
