@@ -53,7 +53,7 @@ const items = [
   },
   {
     id: "8",
-    src: "/Logos/hs/1.svg",
+    src: "/Logos/HS/1.svg",
     alt: "Picture8",
     category: "logo",
   },
@@ -77,7 +77,7 @@ const items = [
   },
   {
     id: "12",
-    src: "/Logos/q.svg",
+    src: "/Logos/Q.svg",
     alt: "Picture12",
     category: "logo",
   },
