@@ -30,6 +30,15 @@ export const Gallery = ({ items, category }: GalleryProps) => {
     }
   };
 
+  // Function to get the correct image path
+  const getImagePath = (src: string) => {
+    // If the path already starts with http/https, return as is
+    if (src.startsWith('http')) return src;
+    
+    // For local images in public folder, ensure proper path
+    return src.startsWith('/') ? src : `/${src}`;
+  };
+
   useEffect(() => {
     return () => {
       clearTimeout(pauseTimeout);
@@ -42,12 +51,10 @@ export const Gallery = ({ items, category }: GalleryProps) => {
 
   return (
     <>
-      {/* Updated Navigation Bar */}
       <div className="sticky top-0 left-0 w-full z-10 bg-white shadow-md">
         <Navigation />
       </div>
 
-      {/* Gallery Content */}
       <div className="pt-9" onMouseMove={handleMouseMove}>
         <div className="auto-scroll-container px-4">
           <div
@@ -61,12 +68,15 @@ export const Gallery = ({ items, category }: GalleryProps) => {
                 key={`${item.id}-${index}`}
                 className="rounded-lg overflow-hidden aspect-square transition-transform hover:scale-105 cursor-pointer"
                 onClick={() => {
-                  setSelectedImage({ src: item.src, alt: item.alt });
+                  setSelectedImage({ 
+                    src: getImagePath(item.src), 
+                    alt: item.alt 
+                  });
                   setIsPaused(true);
                 }}
               >
                 <img
-                  src={item.src}
+                  src={getImagePath(item.src)}
                   alt={item.alt}
                   className="w-full h-full object-cover"
                 />
@@ -76,7 +86,6 @@ export const Gallery = ({ items, category }: GalleryProps) => {
         </div>
       </div>
 
-      {/* Image Modal */}
       <Dialog
         open={!!selectedImage}
         onOpenChange={(open) => {
