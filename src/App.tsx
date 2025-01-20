@@ -437,7 +437,7 @@ const items = [
   },
   {
     id: "72",
-    src: "/poster/thumb2.svg",
+    src: "/Poster/thumb2.svg",
     alt: "Picture72",
     category: "channel-art",
   },
