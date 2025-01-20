@@ -30,20 +30,37 @@ export const Gallery = ({ items, category }: GalleryProps) => {
     }
   };
 
-  // Function to get the correct image path
   const getImagePath = (src: string) => {
-    // If the path already starts with http/https, return as is
-    if (src.startsWith('http')) return src;
+    // Log the image path for debugging
+    console.log("Original image path:", src);
     
-    // For local images in public folder, ensure proper path
-    return src.startsWith('/') ? src : `/${src}`;
+    // If the path already starts with http/https, return as is
+    if (src.startsWith('http')) {
+      return src;
+    }
+    
+    // Ensure path starts with forward slash
+    const normalizedPath = src.startsWith('/') ? src : `/${src}`;
+    console.log("Normalized image path:", normalizedPath);
+    
+    // For Vercel deployment, we need to ensure the path is absolute
+    const basePath = import.meta.env.BASE_URL || '';
+    const finalPath = `${basePath}${normalizedPath}`;
+    console.log("Final image path:", finalPath);
+    
+    return finalPath;
   };
 
   useEffect(() => {
+    // Log all image paths on component mount for debugging
+    items.forEach(item => {
+      console.log(`Processing image: ${item.id}`, getImagePath(item.src));
+    });
+
     return () => {
       clearTimeout(pauseTimeout);
     };
-  }, []);
+  }, [items]);
 
   const filteredItems = category
     ? items.filter((item) => item.category === category)
@@ -68,8 +85,10 @@ export const Gallery = ({ items, category }: GalleryProps) => {
                 key={`${item.id}-${index}`}
                 className="rounded-lg overflow-hidden aspect-square transition-transform hover:scale-105 cursor-pointer"
                 onClick={() => {
+                  const imagePath = getImagePath(item.src);
+                  console.log("Selected image path:", imagePath);
                   setSelectedImage({ 
-                    src: getImagePath(item.src), 
+                    src: imagePath,
                     alt: item.alt 
                   });
                   setIsPaused(true);
@@ -79,6 +98,11 @@ export const Gallery = ({ items, category }: GalleryProps) => {
                   src={getImagePath(item.src)}
                   alt={item.alt}
                   className="w-full h-full object-cover"
+                  onError={(e) => {
+                    console.error("Image failed to load:", e.currentTarget.src);
+                    // Optionally set a fallback image
+                    // e.currentTarget.src = '/fallback-image.png';
+                  }}
                 />
               </div>
             ))}
@@ -103,6 +127,9 @@ export const Gallery = ({ items, category }: GalleryProps) => {
                 src={selectedImage.src}
                 alt={selectedImage.alt}
                 className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+                onError={(e) => {
+                  console.error("Modal image failed to load:", e.currentTarget.src);
+                }}
               />
             </div>
           )}
