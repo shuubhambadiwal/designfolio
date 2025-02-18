@@ -443,7 +443,7 @@ const items = [
   },
   {
     id: "73",
-    src: "/Poster/FP.svg",
+    src: "/Poster/BE/1.svg",
     alt: "Picture73",
     category: "poster",
   },
@@ -461,13 +461,13 @@ const items = [
   },
   {
     id: "76",
-    src: "/Poster/BE/1.svg",
+    src: "/Poster/FP.svg",
     alt: "Picture76",
     category: "poster",
   },
   {
     id: "77",
-    src: "/Poster/jrm.svg",
+    src: "/Poster/BE/2.svg",
     alt: "Picture77",
     category: "poster",
   },
@@ -485,7 +485,7 @@ const items = [
   },
   {
     id: "78",
-    src: "/Poster/BE/2.svg",
+    src: "/Poster/jrm.svg",
     alt: "Picture78",
     category: "poster",
   },
